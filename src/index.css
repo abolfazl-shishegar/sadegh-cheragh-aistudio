@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #0d1525;
+  --color-surface-deep: #111e31;
+  --color-surface: #18263c;
+  --color-raised: #20334b;
+  --color-brand: #49dceb;
+  --color-brand-hover: #23c5d9;
+  --color-ink: #f4f7fc;
+  --color-muted: #cbd5e1;
+  --color-line: #2a3a51;
+  --color-warm: #ff934f;
+}
+
+@layer components {
+  .shop-wrap { @apply mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-5; }
+  .shop-panel { @apply rounded-[18px] border border-line bg-surface; }
+  .shop-heading { @apply text-xl leading-8 font-extrabold sm:text-[27px] sm:leading-10; }
+  .shop-description { @apply mt-1 text-sm leading-7 text-muted; }
+  .shop-anchor { scroll-margin-top: 8rem; }
+  .shop-button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-3 py-2 text-center text-sm font-semibold transition-colors duration-200 sm:px-4;
+  }
+  .shop-primary { @apply border border-brand bg-brand text-canvas hover:border-brand-hover hover:bg-brand-hover; }
+  .shop-secondary { @apply border border-line bg-surface-deep text-ink hover:border-brand/60 hover:bg-raised; }
+  .shop-link { @apply text-brand transition-colors hover:text-ink; }
+  .shop-nav-link { @apply inline-flex min-h-10 shrink-0 items-center gap-1 rounded-lg px-1 text-xs text-muted transition-colors hover:bg-raised hover:text-brand xl:gap-1.5 xl:px-2 xl:text-sm; }
+  @media (prefers-reduced-motion: no-preference) {
+    details[open] > .shop-faq-answer { animation: shop-faq-enter 180ms ease-out; }
+  }
+}
+
+@keyframes shop-faq-enter {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@layer base {
+  :where(a, button, input, select, summary):focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+}

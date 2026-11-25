@@ -1,0 +1,7 @@
+{
+  "name": "فروشگاه صادق چراغ | Sadegh Cheragh",
+  "description": "فروشگاه تخصصی طلق چراغ انواع خودروهای داخلی و وارداتی با دسته‌بندی بر اساس مدل خودرو و ارسال سریع",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
